@@ -8,7 +8,7 @@ function play(select) {
   audio.play();
 }
 
-function testSelected() {
+function testSelectedZlil() {
   if (
     localStorage.getItem("zlil") !== null &&
     localStorage.getItem("zlil") !== undefined
@@ -18,7 +18,7 @@ function testSelected() {
     return 1;
   }
 }
-function selectedBox() {
+function SelectedZlilBox() {
   let selected;
   bootbox.dialog({
     title: "בחירת צליל להודעות צ'אט",
@@ -29,7 +29,7 @@ function selectedBox() {
     buttons: {
       reset: {
         label: "איפוס",
-        className: "btn-danger",
+        className: "",
         callback: function () {
           play(1);
           localStorage.removeItem("zlil");
@@ -140,7 +140,7 @@ function selectedBox() {
 socket.on("event:chats.receive", function (data) {
   // data.message.newSet === true &&
   if (data.self === 0) {
-    play(testSelected());
+    play(testSelectedZlil());
   }
 });
 
