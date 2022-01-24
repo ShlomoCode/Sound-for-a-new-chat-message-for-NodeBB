@@ -29,7 +29,7 @@ function selectedBox() {
     buttons: {
       reset: {
         label: "איפוס",
-        className: "btn-warning",
+        className: "btn-danger",
         callback: function () {
           play(1);
           localStorage.removeItem("zlil");
@@ -138,7 +138,7 @@ function selectedBox() {
 }
 
 socket.on("event:chats.receive", function (data) {
-  // DataHook.message.newSet === true &&
+  // data.message.newSet === true &&
   if (data.self === 0) {
     play(testSelected());
   }
