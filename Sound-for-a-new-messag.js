@@ -1,3 +1,13 @@
+// ==UserScript==
+// @name         add Sound for a new messag
+// @namespace    https://madrichim.ovh
+// @version      1.0
+// @updateURL    https://github.com/ShlomoCode/Sound-for-a-new-messag/raw/main/
+// @description  הוספת צלילים להודעה שלא נקראה באתרי NodeBB
+// @author       ShlomoCode
+// @match        https://mitmachim.top/*
+// @match        https://tchumim.com/*
+// ==/UserScript==
 function play(select) {
   var audio;
   audio = new Audio(
