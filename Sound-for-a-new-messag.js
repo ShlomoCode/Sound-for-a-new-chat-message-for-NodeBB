@@ -29,7 +29,7 @@ function SelectedZlilBox() {
     buttons: {
       reset: {
         label: "איפוס",
-        className: "",
+        className: "btn-warning",
         callback: function () {
           play(1);
           localStorage.removeItem("zlil");
@@ -38,7 +38,7 @@ function SelectedZlilBox() {
       },
       0: {
         label: "1",
-        className: "btn-warning",
+        className: "",
         callback: function () {
           play(0);
           selected = 0;
@@ -47,7 +47,7 @@ function SelectedZlilBox() {
       },
       1: {
         label: "2",
-        className: "btn-warning",
+        className: "",
         callback: function () {
           play(1);
           selected = 1;
@@ -56,7 +56,7 @@ function SelectedZlilBox() {
       },
       2: {
         label: "3",
-        className: "btn-warning",
+        className: "",
         callback: function () {
           play(2);
           selected = 2;
@@ -65,7 +65,7 @@ function SelectedZlilBox() {
       },
       3: {
         label: "4",
-        className: "btn-warning",
+        className: "",
         callback: function () {
           play(3);
           selected = 3;
@@ -74,7 +74,7 @@ function SelectedZlilBox() {
       },
       4: {
         label: "5",
-        className: "btn-warning",
+        className: "",
         callback: function () {
           play(4);
           selected = 4;
@@ -83,7 +83,7 @@ function SelectedZlilBox() {
       },
       5: {
         label: "6",
-        className: "btn-warning",
+        className: "",
         callback: function () {
           play(5);
           selected = 5;
@@ -92,7 +92,7 @@ function SelectedZlilBox() {
       },
       6: {
         label: "7",
-        className: "btn-warning",
+        className: "",
         callback: function () {
           play(6);
           selected = 6;
@@ -101,7 +101,7 @@ function SelectedZlilBox() {
       },
       7: {
         label: "8",
-        className: "btn-warning",
+        className: "",
         callback: function () {
           play(7);
           selected = 7;
@@ -110,7 +110,7 @@ function SelectedZlilBox() {
       },
       8: {
         label: "9",
-        className: "btn-warning",
+        className: "",
         callback: function () {
           play(8);
           selected = 8;
@@ -119,7 +119,7 @@ function SelectedZlilBox() {
       },
       9: {
         label: "10",
-        className: "btn-warning",
+        className: "",
         callback: function () {
           play(9);
           selected = 9;
@@ -153,8 +153,8 @@ $(SettingsBtn).css({
 $(SettingsBtn).addClass("fas fa-cogs");
 document.body.appendChild(SettingsBtn);
 
-$("#SettingsBtn").click(function () { 
-  SelectedZlilBox()
+$("#SettingsBtn").click(function () {
+  SelectedZlilBox();
 });
 socket.on("event:chats.receive", function (data) {
   // data.message.newSet === true &&
