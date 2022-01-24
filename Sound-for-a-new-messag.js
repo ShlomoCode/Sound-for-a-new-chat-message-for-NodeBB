@@ -162,10 +162,3 @@ socket.on("event:chats.receive", function (data) {
     play(testSelectedZlil());
   }
 });
-
-// $("#SelectedAudio").on("click", function () {
-//   play(document.getElementById("SelectedAudio").options.selectedIndex);
-// });
-// {
-//   /* <button onclick="testPlay">Try it</button> */
-// }
