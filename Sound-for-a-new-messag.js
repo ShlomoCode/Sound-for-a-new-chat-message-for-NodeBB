@@ -1,13 +1,152 @@
-function play() {
-    var audio = new Audio(
-        "https://mitmachim.top/assets/uploads/files/1642875059879-alert.mp3"
-    );
-    audio.play();
+function play(select) {
+  var audio;
+  audio = new Audio(
+    "https://madrichim.ovh/assets/uploads/sounds/new-chat-message" +
+      select +
+      ".mp3"
+  );
+  audio.play();
 }
 
-socket.on("event:chats.receive", function(data) {
-    // DataHook.message.newSet === true &&
-    if (data.self === 0) {
-        play();
-    }
+function testSelected() {
+  if (
+    localStorage.getItem("zlil") !== null &&
+    localStorage.getItem("zlil") !== undefined
+  ) {
+    return localStorage.getItem("zlil");
+  } else {
+    return 1;
+  }
+}
+function selectedBox() {
+  let selected;
+  bootbox.dialog({
+    title: "בחירת צליל להודעות צ'אט",
+    message: "<p>אנא בחר צליל להתראה על הודעת צ'אט חדשה.</p>",
+    onEscape: true,
+    backdrop: true,
+    size: "large",
+    buttons: {
+      reset: {
+        label: "איפוס",
+        className: "btn-warning",
+        callback: function () {
+          play(1);
+          localStorage.removeItem("zlil");
+          return false;
+        },
+      },
+      0: {
+        label: "1",
+        className: "btn-warning",
+        callback: function () {
+          play(0);
+          selected = 0;
+          return false;
+        },
+      },
+      1: {
+        label: "2",
+        className: "btn-warning",
+        callback: function () {
+          play(1);
+          selected = 1;
+          return false;
+        },
+      },
+      2: {
+        label: "3",
+        className: "btn-warning",
+        callback: function () {
+          play(2);
+          selected = 2;
+          return false;
+        },
+      },
+      3: {
+        label: "4",
+        className: "btn-warning",
+        callback: function () {
+          play(3);
+          selected = 3;
+          return false;
+        },
+      },
+      4: {
+        label: "5",
+        className: "btn-warning",
+        callback: function () {
+          play(4);
+          selected = 4;
+          return false;
+        },
+      },
+      5: {
+        label: "6",
+        className: "btn-warning",
+        callback: function () {
+          play(5);
+          selected = 5;
+          return false;
+        },
+      },
+      6: {
+        label: "7",
+        className: "btn-warning",
+        callback: function () {
+          play(6);
+          selected = 6;
+          return false;
+        },
+      },
+      7: {
+        label: "8",
+        className: "btn-warning",
+        callback: function () {
+          play(7);
+          selected = 7;
+          return false;
+        },
+      },
+      8: {
+        label: "9",
+        className: "btn-warning",
+        callback: function () {
+          play(8);
+          selected = 8;
+          return false;
+        },
+      },
+      9: {
+        label: "10",
+        className: "btn-warning",
+        callback: function () {
+          play(9);
+          selected = 9;
+          return false;
+        },
+      },
+      ok: {
+        label: "שמירה (חובה!)",
+        className: "btn-success",
+        callback: function () {
+          localStorage.setItem("zlil", selected);
+        },
+      },
+    },
+  });
+}
+
+socket.on("event:chats.receive", function (data) {
+  // DataHook.message.newSet === true &&
+  if (data.self === 0) {
+    play(testSelected());
+  }
 });
+
+// $("#SelectedAudio").on("click", function () {
+//   play(document.getElementById("SelectedAudio").options.selectedIndex);
+// });
+// {
+//   /* <button onclick="testPlay">Try it</button> */
+// }
