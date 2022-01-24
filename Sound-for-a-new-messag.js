@@ -137,6 +137,25 @@ function SelectedZlilBox() {
   });
 }
 
+const SettingsBtn = document.createElement("div");
+$(SettingsBtn).attr({
+  id: "SettingsBtn",
+});
+$(SettingsBtn).css({
+  position: "fixed",
+  top: "12%",
+  left: "1%",
+  border: "solid 1px",
+  padding: "5px",
+  "border-radius": "5px",
+  "background-color": "rgba(187,231,255,0.44)",
+});
+$(SettingsBtn).addClass("fas fa-cogs");
+document.body.appendChild(SettingsBtn);
+
+$("#SettingsBtn").click(function () { 
+  SelectedZlilBox()
+});
 socket.on("event:chats.receive", function (data) {
   // data.message.newSet === true &&
   if (data.self === 0) {
