@@ -6,7 +6,6 @@
 // @description  הוספת צלילים להודעה שלא נקראה באתרי NodeBB
 // @author       ShlomoCode
 // @match        https://mitmachim.top/*
-// @match        https://tchumim.com/*
 // ==/UserScript==
 if (app.user.username !== "אורח") {
   function play(select) {
